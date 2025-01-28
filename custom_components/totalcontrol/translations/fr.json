@@ -1,0 +1,22 @@
+{
+    "config": {
+        "abort": {
+            "device_already_configured": "L'appareil est déjà configuré."
+        },
+        "error": {
+            "connection_error": "La connection à l'Extraflame n'est pas possible.",
+            "unauthorized": "Échec de la connexion, veuillez vérifier vos identifiants.",
+            "unknown_error": "Erreur inconue, veuillez vérifier la configuration."
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "email": "Adresse email",
+                    "password": "Mot de passe",
+                    "endpoint": "App nom/marque"
+                },
+                "description": "Remplissez les paramètres Extraflame"
+            }
+        }
+    }
+}
