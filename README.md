@@ -4,7 +4,7 @@ Home Assistant integration for controlling Extraflame heating devices (pellet st
 If you have access to your stove via https://totalcontrol.extraflame.it, most likely integration will work for you.
 
 ## Screenshots
-<img width="671" alt="micronova_screenshot1" src="https://github.com/nickbalashov/home_assistant_total_control/assets/1639734/4c646550-637d-4e20-bc64-a6977bfee3af">
+<img width="671" alt="Total Control" src="https://github.com/nickbalashov/home_assistant_total_control/screenshot1.jpg">
 
 ## Installation
 
