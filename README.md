@@ -1,7 +1,7 @@
 # Micronova Agua IOT
 
-[![GitHub Release][releases-shield]][releases]
-[![Maintainer][maintainer-shield]][maintainer]
+[![GitHub Release][hacs-shield]][releases]
+[![Maintainer][hacs-shield]][maintainer]
 [![HACS Custom][hacs-shield]][hacs-url]
 
 Home Assistant integration for controlling Extraflame heating devices (pellet stoves) connected via Remote WiFi Module - White Label.
@@ -23,9 +23,7 @@ Or folow these steps:
 
 That is a copy of  [Micronova Agua IOT](https://github.com/vincentwolsink/home_assistant_micronova_agua_iot)
 
-[releases-shield]: https://img.shields.io/github/v/release/vincentwolsink/home_assistant_micronova_agua_iot.svg?style=for-the-badge
-[releases]: https://github.com/nickbalashov/home_assistant_total_control/releases
-[maintainer-shield]: https://img.shields.io/badge/maintainer-vincentwolsink-blue.svg?style=for-the-badge
-[maintainer]: https://github.com/nickbalashov
 [hacs-shield]: https://img.shields.io/badge/HACS-Default-41BDF5.svg?style=for-the-badge
+[releases]: https://github.com/nickbalashov/home_assistant_total_control/releases
+[maintainer]: https://github.com/nickbalashov
 [hacs-url]: https://github.com/nickbalashov/home_assistant_total_control
