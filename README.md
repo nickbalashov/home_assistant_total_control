@@ -1,11 +1,7 @@
-# Micronova Agua IOT
-
-[![GitHub Release][hacs-shield]][releases]
-[![Maintainer][hacs-shield]][maintainer]
-[![HACS Custom][hacs-shield]][hacs-url]
+# Total Control 1.0
 
 Home Assistant integration for controlling Extraflame heating devices (pellet stoves) connected via Remote WiFi Module - White Label.
-
+If you have access to your stove via https://totalcontrol.extraflame.it, most likely integration will work for you.
 
 ## Screenshots
 <img width="671" alt="micronova_screenshot1" src="https://github.com/nickbalashov/home_assistant_total_control/assets/1639734/4c646550-637d-4e20-bc64-a6977bfee3af">
@@ -21,9 +17,5 @@ Or folow these steps:
 
 ## Credits
 
-That is a copy of  [Micronova Agua IOT](https://github.com/vincentwolsink/home_assistant_micronova_agua_iot)
+That is a copy of  [Micronova Agua IOT](https://github.com/vincentwolsink/home_assistant_micronova_agua_iot) and it was adjusted to use read and write data via https://totalcontrol.extraflame.it
 
-[hacs-shield]: https://img.shields.io/badge/HACS-Default-41BDF5.svg?style=for-the-badge
-[releases]: https://github.com/nickbalashov/home_assistant_total_control/releases
-[maintainer]: https://github.com/nickbalashov
-[hacs-url]: https://github.com/nickbalashov/home_assistant_total_control
