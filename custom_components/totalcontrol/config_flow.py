@@ -54,12 +54,10 @@ class totalcontrolConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                     unique_id=gen_uuid,
                 )
                 await agua.connect()
-            except ConnectionError as e:
-                _LOGGER.error("Connection error to Agua IOT: %s", e)
-                errors["base"] = "connection_error"
+
             except totalcontrolError as e:
-                _LOGGER.error("Common Agua IOT error: %s", e)
-                errors["base"] = "unknown_error"
+                _LOGGER.error("Login error: %s", e)
+                errors["base"] = "login_error"
 
             if "base" not in errors:
                 return self.async_create_entry(
