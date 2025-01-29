@@ -1,5 +1,6 @@
 """total control provides controlling heating devices connected via total control application."""
 
+from json import JSONDecodeError
 import logging
 
 import httpx
@@ -114,19 +115,20 @@ class totalcontrol:
                 follow_redirects=False,
                 timeout=DEFAULT_TIMEOUT_VALUE,
             )
-        except httpx.TransportError:
-            raise TotalControlConnectError(
-                f"Connection error to {url}"
-            ) from httpx.TransportError
 
-        _LOGGER.debug("Status_code: %s", response.status_code)
+            _LOGGER.debug("Status_code: %s", response.status_code)
 
-        if response.status_code == 200:
-            resJson = response.json()
-            if resJson:
-                _LOGGER.debug("Response.json: %s", resJson)
-                if resJson[JsonDataField.RESULT_CODE] == 0:
-                    return resJson
+            if response.status_code == 200:
+                resJson = response.json()
+                if resJson:
+                    _LOGGER.debug("Response.json: %s", resJson)
+                    if resJson[JsonDataField.RESULT_CODE] == 0:
+                        return resJson
+
+        except httpx.TransportError as error:
+            _LOGGER.error("Connection error to: %s, error: %s", url, error)
+        except JSONDecodeError as error:
+            _LOGGER.error("Invalid json in response: %s", error)
 
         return False
 
@@ -256,10 +258,10 @@ class Device:
         parameterValue = int(value)
         try:
             await self.__request_writing(parameterId, parameterValue)
-        except totalcontrolError:
+        except totalcontrolError as error:
             raise totalcontrolError(
-                f"Error while trying to set: key={key} value={value}"
-            ) from totalcontrolError
+                f"Error while trying to set: key={key} value={value} error={error}"
+            ) from error
 
     async def set_register_value_description(self, key, value_description):
         """Set register value description."""
@@ -280,11 +282,3 @@ class totalcontrolError(Exception):
     def __init__(self, message) -> None:
         """Initialize totalcontrolError."""
         Exception.__init__(self, message)
-
-
-class TotalControlConnectError(Exception):
-    """Connection."""
-
-    def __init__(self, message) -> None:
-        """Initialize TotalControlConnectError."""
-        super().__init__(message)
