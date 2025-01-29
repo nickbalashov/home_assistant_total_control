@@ -10,7 +10,7 @@ from homeassistant.helpers.typing import ConfigType
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
 
 from .const import CONF_UUID, DOMAIN, PLATFORMS, UPDATE_INTERVAL
-from .totalcontrol import TotalControlConnectError, totalcontrol, totalcontrolError
+from .totalcontrol import totalcontrol, totalcontrolError
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -42,22 +42,16 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
 
     try:
         await agua.connect()
-    except TotalControlConnectError as e:
-        _LOGGER.error("Connection error to Agua IOT: %s", e)
-        return False
-    except totalcontrolError as e:
-        _LOGGER.error("Unknown Agua IOT error: %s", e)
+    except totalcontrolError as error:
+        _LOGGER.error("Unable to login: %s", error)
         return False
 
     async def async_update_data():
         """Get the latest data."""
         try:
             await agua.update()
-        except TotalControlConnectError as e:
-            _LOGGER.error("Connection error to Agua IOT: %s", e)
-            return False
-        except totalcontrolError as e:
-            _LOGGER.error("Unknown Agua IOT error: %s", e)
+        except totalcontrolError as error:
+            _LOGGER.error("Unable to fetch data: %s", error)
             return False
 
     coordinator = DataUpdateCoordinator(
