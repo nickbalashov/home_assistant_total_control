@@ -9,6 +9,6 @@
   "iot_class": "cloud_polling",
   "issue_tracker": "https://github.com/nickbalashov/home_assistant_total_control/issues",
   "requirements": ["httpx", "simpleeval"],
-  "version": "0.0.1",
+  "version": "0.0.2",
   "loggers": ["custom_components.totalcontrol"]
 }
