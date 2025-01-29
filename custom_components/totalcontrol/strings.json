@@ -11,8 +11,7 @@
       }
     },
     "error": {
-      "connection_error": "[%key:common::config_flow::error::connection_error%]",
-      "unknown_error": "[%key:common::config_flow::error::unknown_error%]"
+      "totalcontrolError": "[%key:common::config_flow::error::login_error%]"
     },
     "abort": {
       "device_already_configured": "[%key:common::config_flow::abort::device_already_configured%]"
