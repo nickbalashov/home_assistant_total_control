@@ -111,8 +111,8 @@ REGISTERS = {
     JsonDataField.WATER_TEMPERATURE: {},
     JsonDataField.SMOKE_TEMPERATURE: {},
     JsonDataField.TARGET_ROOM_TEMPERATURE: {
-        "set_min": 65,
-        "set_max": 80,
+        "set_min": 6,
+        "set_max": 41,
         "parameterId": 4,
     },
     JsonDataField.TARGET_POWER: {"set_min": 1, "set_max": 5, "parameterId": 5},
